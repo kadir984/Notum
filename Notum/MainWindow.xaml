@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Notum"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="334" Width="536">
     <Grid>
-        
+        <Label Content="Öğrenci Not Ekranı" Height="40" Margin="10,10,0,0" VerticalAlignment="Top" Width="508" FontSize="20" RenderTransformOrigin="0.133,0.806" FontWeight="Bold" HorizontalAlignment="Left" HorizontalContentAlignment="Center"/>
+        <Label Content="Öğrenci" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ders" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top"/>
+        <Label Content="Not" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top"/>
+        <Label Content="Açıklama" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="70,55,0,0" VerticalAlignment="Top" Width="120" TabIndex="1"/>
+        <ComboBox HorizontalAlignment="Left" Margin="70,86,0,0" VerticalAlignment="Top" Width="120" TabIndex="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="70,117,0,0" TextWrapping="Wrap" Text="Sayı Giriniz" VerticalAlignment="Top" Width="150" TabIndex="3"/>
+        <RichTextBox HorizontalAlignment="Left" Height="91" Margin="70,148,0,0" VerticalAlignment="Top" Width="150" TabIndex="4">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button Content="+" HorizontalAlignment="Left" Margin="195,55,0,0" VerticalAlignment="Top" Width="25" Height="22"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="195,86,0,0" VerticalAlignment="Top" Width="25" Height="22"/>
+        <DataGrid HorizontalAlignment="Left" Height="184" Margin="242,55,0,0" VerticalAlignment="Top" Width="276"/>
+        <Button Content="Öğrenci Ara" HorizontalAlignment="Left" Margin="410,244,0,0" VerticalAlignment="Top" Width="108" Height="22"/>
+        <Button Content="Kaydet" HorizontalAlignment="Left" Margin="70,244,0,0" VerticalAlignment="Top" Width="150" Height="49"/>
+        <ComboBox HorizontalAlignment="Left" Margin="242,244,0,0" VerticalAlignment="Top" Width="163" TabIndex="1"/>
+        <Button Content="Ders Ara" HorizontalAlignment="Left" Margin="410,271,0,0" VerticalAlignment="Top" Width="108" Height="22"/>
+        <ComboBox HorizontalAlignment="Left" Margin="242,271,0,0" VerticalAlignment="Top" Width="163" TabIndex="1"/>
     </Grid>
 </Window>
