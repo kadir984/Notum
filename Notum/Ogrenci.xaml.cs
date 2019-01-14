@@ -10,31 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Notum
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Ogrenci.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Ogrenci : Window
     {
-        public MainWindow()
+        public Ogrenci()
         {
             InitializeComponent();
         }
 
-        public void btnOgrenciKyt_Click(object sender, RoutedEventArgs e)
+        private void btnOgrenciKayit_Click(object sender, RoutedEventArgs e)
         {
-            Ogrenci ogrenci = new Ogrenci();
-            ogrenci.Show();
-        }
-
-        public void btnDersKyt_Click(object sender, RoutedEventArgs e)
-        {
-            Ders ders = new Ders();
-            ders.Show();
+            ClassLibrary.DbIslem.Ekle("Ogrenci", "AdSoyad", tbxOgrenciAdSoyad.Text);
+            
+            this.Hide();
         }
     }
 }
