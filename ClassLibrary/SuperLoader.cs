@@ -17,7 +17,7 @@ namespace ClassLibrary
             cmb.SelectedIndex = 0;
         }
 
-        public static void DataGridLoader(DataGrid dg, IEnumerable lst)
+        public static void DataGridLoader(DataGr dg, IEnumerable lst)
         {
             dg.ItemsSource = null;
             dg.ItemsSource = lst;
