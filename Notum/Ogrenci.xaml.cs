@@ -31,7 +31,7 @@ namespace Notum
             ClassLibrary.DbIslem.Ekle("Ogrenci", "AdSoyad", tbxOgrenciAdSoyad.Text);
             MainWindow mainWindow = new MainWindow();
             //mainWindow.Refresh();
-            _mainWindow.cbOgrenci
+            _mainWindow.cbOgrenci. devam 
             this.Close();//!!!!
         }
 
