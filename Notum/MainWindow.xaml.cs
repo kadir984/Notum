@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,11 +25,18 @@ namespace Notum
         {
             InitializeComponent();
         }
+     
+        private void MainWindow1_Loaded(object sender, RoutedEventArgs e)
+        {
+            ClassLibrary.DbIslem.CbDoldur(cbOgrenci, "Ogrenci", "AdSoyad");
+            ClassLibrary.DbIslem.CbDoldur(cbDers, "Ders", "DersAdi");
+        }
 
         public void btnOgrenciKyt_Click(object sender, RoutedEventArgs e)
         {
             Ogrenci ogrenci = new Ogrenci();
             ogrenci.Show();
+            
         }
 
         public void btnDersKyt_Click(object sender, RoutedEventArgs e)
@@ -36,5 +44,7 @@ namespace Notum
             Ders ders = new Ders();
             ders.Show();
         }
+
+        
     }
 }

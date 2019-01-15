@@ -27,7 +27,11 @@ namespace Notum
         private void btnDersKyt_Click(object sender, RoutedEventArgs e)
         {
             ClassLibrary.DbIslem.Ekle("Ders","DersAdi",tbxDersAdi.Text);
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Hide();
+
+
         }
     }
 }

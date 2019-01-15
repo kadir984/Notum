@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Notum"
         mc:Ignorable="d"
-        Title="Ogrenci" Height="141.823" Width="266.763">
+        Title="Ders" Height="141.823" Width="266.763">
     <Grid>
         <Label Content="Ders Kayıt Ekranı" HorizontalAlignment="Left" Margin="39,10,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Label Content="Ders Adı" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>

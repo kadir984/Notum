@@ -19,16 +19,25 @@ namespace Notum
     /// </summary>
     public partial class Ogrenci : Window
     {
-        public Ogrenci()
+        MainWindow _mainWindow;
+        public Ogrenci(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
         }
 
         private void btnOgrenciKayit_Click(object sender, RoutedEventArgs e)
         {
             ClassLibrary.DbIslem.Ekle("Ogrenci", "AdSoyad", tbxOgrenciAdSoyad.Text);
-            
-            this.Hide();
+            MainWindow mainWindow = new MainWindow();
+            //mainWindow.Refresh();
+            _mainWindow.cbOgrenci
+            this.Close();//!!!!
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+        
         }
     }
 }

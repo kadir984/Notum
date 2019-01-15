@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Controls;
+
 
 namespace ClassLibrary
 {
@@ -13,6 +15,7 @@ namespace ClassLibrary
     {
 
         static SqlConnection baglanti = new SqlConnection(@"Server=.\MANAS_SQLSERVER;Database=NotDb;User ID=sa;Password=123456Aa;");
+
 
         public static void Baglan()
         {
@@ -26,9 +29,11 @@ namespace ClassLibrary
         {
             Baglan();
             string ekleString = "INSERT INTO " + dbtabloadi + "(" + dbkolon + ") VALUES('" + dbdeger + "')";
-            SqlCommand eklesql = new SqlCommand(ekleString, baglanti);
+            SqlCommand eklesql = new SqlCommand(ekleString, baglanti); //
             int etkilenensatirsayisi = eklesql.ExecuteNonQuery();
             baglanti.Close();
+           
+           
         }
 
         public static void Duzelt(string dbtabloadi, string dbkolonadi, string dbkolondeger, string id)
@@ -49,10 +54,10 @@ namespace ClassLibrary
             baglanti.Close();
         }
 
-        public static void ara(string dbtabloadi, string id)// Datagrid eklenmeli 
+        public static void Ara(string dbtabloadi)
         {
             Baglan();
-            string araString = "SELECT * FROM " + dbtabloadi + " WHERE id =('" + id + "')";
+            string araString = "SELECT * FROM " + dbtabloadi;
             SqlCommand arasql = new SqlCommand(araString, baglanti);
             SqlDataAdapter sqlData = new SqlDataAdapter(arasql);
             DataTable dt = new DataTable();
@@ -60,5 +65,17 @@ namespace ClassLibrary
             //DataGrid.datasource = dt;
             baglanti.Close();
         }
+        public static void CbDoldur(ComboBox cb, string cbTablo, string cbKolonAdi)
+        {
+            Baglan();
+            SqlCommand cmd = new SqlCommand("select * from " +cbTablo , baglanti);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cb.Items.Add(dr[cbKolonAdi]);
+            }
+            baglanti.Close();
+        }
+        
     }
 }

@@ -1,13 +1,17 @@
-﻿<Window x:Class="Notum.MainWindow"
+﻿<Window x:Name="MainWindow1" x:Class="Notum.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Notum"
         mc:Ignorable="d"
-        Title="MainWindow" Height="334" Width="536">
+        Title="MainWindow" Height="334" Width="536" Loaded="MainWindow1_Loaded">
     <Grid>
-        <Label Content="Öğrenci Not Ekranı" Height="40" Margin="10,10,0,0" VerticalAlignment="Top" Width="508" FontSize="20" RenderTransformOrigin="0.133,0.806" FontWeight="Bold" HorizontalAlignment="Left" HorizontalContentAlignment="Center"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="233*"/>
+            <ColumnDefinition Width="295*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Öğrenci Not Ekranı" Height="40" Margin="10,10,0,0" VerticalAlignment="Top" Width="508" FontSize="20" RenderTransformOrigin="0.133,0.806" FontWeight="Bold" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
         <Label Content="Öğrenci" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top"/>
         <Label Content="Ders" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top"/>
         <Label Content="Not" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top"/>
@@ -24,11 +28,11 @@
         </RichTextBox>
         <Button x:Name="btnOgrenciKyt" Content="+" HorizontalAlignment="Left" Margin="195,55,0,0" VerticalAlignment="Top" Width="25" Height="22" Click="btnOgrenciKyt_Click"/>
         <Button x:Name="btnDersKyt" Content="+" HorizontalAlignment="Left" Margin="195,86,0,0" VerticalAlignment="Top" Width="25" Height="22" Click="btnDersKyt_Click"/>
-        <DataGrid x:Name="dgKayit" HorizontalAlignment="Left" Height="184" Margin="242,55,0,0" VerticalAlignment="Top" Width="276"/>
-        <Button x:Name="btnOgrenciAra" Content="Öğrenci Ara" HorizontalAlignment="Left" Margin="410,244,0,0" VerticalAlignment="Top" Width="108" Height="22"/>
+        <DataGrid x:Name="dgKayit" HorizontalAlignment="Left" Height="184" Margin="8.997,55,0,0" VerticalAlignment="Top" Width="276" Grid.Column="1"/>
+        <Button x:Name="btnOgrenciAra" Content="Öğrenci Ara" HorizontalAlignment="Left" Margin="176.997,244,0,0" VerticalAlignment="Top" Width="108" Height="22" Grid.Column="1"/>
         <Button x:Name="btnNotKyt" Content="Kaydet" HorizontalAlignment="Left" Margin="70,244,0,0" VerticalAlignment="Top" Width="150" Height="49"/>
-        <ComboBox HorizontalAlignment="Left" Margin="242,244,0,0" VerticalAlignment="Top" Width="163" TabIndex="1"/>
-        <Button x:Name="btnDersAra" Content="Ders Ara" HorizontalAlignment="Left" Margin="410,271,0,0" VerticalAlignment="Top" Width="108" Height="22"/>
-        <ComboBox HorizontalAlignment="Left" Margin="242,271,0,0" VerticalAlignment="Top" Width="163" TabIndex="1"/>
+        <ComboBox HorizontalAlignment="Left" Margin="8.997,244,0,0" VerticalAlignment="Top" Width="163" TabIndex="1" Grid.Column="1"/>
+        <Button x:Name="btnDersAra" Content="Ders Ara" HorizontalAlignment="Left" Margin="176.997,271,0,0" VerticalAlignment="Top" Width="108" Height="22" Grid.Column="1"/>
+        <ComboBox HorizontalAlignment="Left" Margin="8.997,271,0,0" VerticalAlignment="Top" Width="163" TabIndex="1" Grid.Column="1"/>
     </Grid>
 </Window>
