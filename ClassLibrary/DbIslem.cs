@@ -14,7 +14,7 @@ namespace ClassLibrary
     public static class DbIslem
     {
 
-        static SqlConnection baglanti = new SqlConnection(@"Server=.\MANAS_SQLSERVER;Database=NotDb;User ID=sa;Password=123456Aa;");
+        static SqlConnection baglanti = new SqlConnection(@"Server=X870\SQLEXPRESS;Database=NotDb;Integrated Security = True");
 
 
         public static void Baglan()
@@ -28,7 +28,7 @@ namespace ClassLibrary
         public static void Ekle(string dbtabloadi, string dbkolon, string dbdeger)
         {
             Baglan();
-            string ekleString = "INSERT INTO " + dbtabloadi + "(" + dbkolon + ") VALUES('" + dbdeger + "')";
+            string ekleString = "INSERT INTO " + dbtabloadi + "(" + dbkolon + ") VALUES(" + dbdeger + ")";
             SqlCommand eklesql = new SqlCommand(ekleString, baglanti); //
             int etkilenensatirsayisi = eklesql.ExecuteNonQuery();
             baglanti.Close();
@@ -54,7 +54,7 @@ namespace ClassLibrary
             baglanti.Close();
         }
 
-        public static void Ara(string dbtabloadi)
+        public static void Ara(DataGrid dataGrid , string dbtabloadi)
         {
             Baglan();
             string araString = "SELECT * FROM " + dbtabloadi;
@@ -62,7 +62,7 @@ namespace ClassLibrary
             SqlDataAdapter sqlData = new SqlDataAdapter(arasql);
             DataTable dt = new DataTable();
             sqlData.Fill(dt);
-            //DataGrid.datasource = dt;
+            dataGrid.ItemsSource = dt.DefaultView;
             baglanti.Close();
         }
         public static void CbDoldur(ComboBox cb, string cbTablo, string cbKolonAdi)
