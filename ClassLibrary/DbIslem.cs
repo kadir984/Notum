@@ -54,10 +54,21 @@ namespace ClassLibrary
             baglanti.Close();
         }
 
-        public static void Ara(DataGrid dataGrid , string dbtabloadi)
+        public static void Ara(DataGrid dataGrid,string dbtabloadi,string dbkolonadi)
         {
             Baglan();
-            string araString = "SELECT * FROM " + dbtabloadi;
+            string araString = "SELECT "+dbkolonadi+" FROM " + dbtabloadi;
+            SqlCommand arasql = new SqlCommand(araString, baglanti);
+            SqlDataAdapter sqlData = new SqlDataAdapter(arasql);
+            DataTable dt = new DataTable();
+            sqlData.Fill(dt);
+            dataGrid.ItemsSource = dt.DefaultView;
+            baglanti.Close();
+        }
+        public static void ComboAra(DataGrid dataGrid, string dbtabloadi, string dbkolonadi, string sartkolonu, string sart)
+        {
+            Baglan();
+            string araString = "SELECT " + dbkolonadi + " FROM " + dbtabloadi + " where " + sartkolonu + "=" + sart;
             SqlCommand arasql = new SqlCommand(araString, baglanti);
             SqlDataAdapter sqlData = new SqlDataAdapter(arasql);
             DataTable dt = new DataTable();

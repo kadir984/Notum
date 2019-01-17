@@ -22,10 +22,10 @@
         <Button x:Name="btnOgrenciKyt" Content="+" HorizontalAlignment="Left" Margin="195,55,0,0" VerticalAlignment="Top" Width="25" Height="22" Click="btnOgrenciKyt_Click"/>
         <Button x:Name="btnDersKyt" Content="+" HorizontalAlignment="Left" Margin="195,86,0,0" VerticalAlignment="Top" Width="25" Height="22" Click="btnDersKyt_Click"/>
         <DataGrid x:Name="dgKayit" HorizontalAlignment="Left" Height="184" Margin="8.997,55,0,0" VerticalAlignment="Top" Width="276" Grid.Column="1"/>
-        <Button x:Name="btnOgrenciAra" Content="Öğrenci Ara" HorizontalAlignment="Left" Margin="176.997,244,0,0" VerticalAlignment="Top" Width="108" Height="22" Grid.Column="1"/>
+        <Button x:Name="btnOgrenciAra" Content="Öğrenci Ara" HorizontalAlignment="Left" Margin="176.997,244,0,0" VerticalAlignment="Top" Width="108" Height="22" Grid.Column="1" Click="BtnOgrenciAra_Click"/>
         <Button x:Name="btnNotKyt" Content="Kaydet" HorizontalAlignment="Left" Margin="70,244,0,0" VerticalAlignment="Top" Width="150" Height="49" Click="BtnNotKyt_Click"/>
         <ComboBox x:Name="cbOgrenciAra" HorizontalAlignment="Left" Margin="8.997,244,0,0" VerticalAlignment="Top" Width="163" TabIndex="1" Grid.Column="1"/>
-        <Button x:Name="btnDersAra" Content="Ders Ara" HorizontalAlignment="Left" Margin="176.997,271,0,0" VerticalAlignment="Top" Width="108" Height="22" Grid.Column="1"/>
+        <Button x:Name="btnDersAra" Content="Ders Ara" HorizontalAlignment="Left" Margin="176.997,271,0,0" VerticalAlignment="Top" Width="108" Height="22" Grid.Column="1" Click="BtnDersAra_Click"/>
         <ComboBox x:Name="cbDersAra" HorizontalAlignment="Left" Margin="8.997,271,0,0" VerticalAlignment="Top" Width="163" TabIndex="1" Grid.Column="1"/>
         <TextBox x:Name="tbxAciklama" HorizontalAlignment="Left" Height="91" Margin="73,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
     </Grid>

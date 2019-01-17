@@ -26,14 +26,14 @@ namespace Notum
         {
             InitializeComponent();
         }
-     
+
         private void MainWindow1_Loaded(object sender, RoutedEventArgs e)
         {
             ClassLibrary.DbIslem.CbDoldur(cbOgrenci, "Ogrenci", "AdSoyad");
             ClassLibrary.DbIslem.CbDoldur(cbDers, "Ders", "DersAdi");
             ClassLibrary.DbIslem.CbDoldur(cbOgrenciAra, "Ogrenci", "AdSoyad");
             ClassLibrary.DbIslem.CbDoldur(cbDersAra, "Ders", "DersAdi");
-            ClassLibrary.DbIslem.Ara(dgKayit, "Notlar");
+            ClassLibrary.DbIslem.Ara(dgKayit, "Notlar", "*");
         }
 
         public void btnOgrenciKyt_Click(object sender, RoutedEventArgs e)
@@ -52,9 +52,18 @@ namespace Notum
 
         private void BtnNotKyt_Click(object sender, RoutedEventArgs e)
         {
-            ClassLibrary.DbIslem.Ekle("Notlar", "OgrenciId,DersId,Notu,Aciklama",cbOgrenci.SelectedIndex.ToString() + ',' + cbDers.SelectedIndex.ToString() + ',' + tbxNot.Text + ',' + "'" + tbxAciklama.Text.ToString() + "'");
-            ClassLibrary.DbIslem.Ara(dgKayit, "Notlar");
+            ClassLibrary.DbIslem.Ekle("Notlar", "OgrenciId,DersId,Notu,Aciklama", cbOgrenci.SelectedIndex.ToString() + ',' + cbDers.SelectedIndex.ToString() + ',' + tbxNot.Text + ',' + "'" + tbxAciklama.Text.ToString() + "'");
+            ClassLibrary.DbIslem.Ara(dgKayit, "Notlar", "*");
+        }
+
+        private void BtnOgrenciAra_Click(object sender, RoutedEventArgs e)
+        {
+            ClassLibrary.DbIslem.ComboAra(dgKayit, "Notlar", "*","OgrenciId",cbOgrenciAra.SelectedIndex.ToString());
+        }
+
+        private void BtnDersAra_Click(object sender, RoutedEventArgs e)
+        {
+            ClassLibrary.DbIslem.ComboAra(dgKayit, "Notlar", "*","DersId" ,cbDersAra.SelectedIndex.ToString());
         }
     }
 }
- 
